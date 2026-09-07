@@ -152,14 +152,19 @@ h3{font:600 1.28rem/1.3 inherit;margin:0}
 }
 .made-item h3 a:hover{text-decoration-color:currentColor}
 
-/* HoiDiDoi's five-language line */
-.langs{list-style:none;margin:.8rem 0 0;padding:0;font-size:.89rem}
-.langs li{display:flex;gap:.7rem;color:var(--muted);padding:.1rem 0}
-.langs b{
-  flex:none;width:1.75rem;
-  font:700 .66rem/1.75 inherit;letter-spacing:.08em;
-  color:var(--faint);text-transform:uppercase;
+/* One thought in several languages. No language labels: a reader identifies
+   their own language by reading it. The rule and the serif face are what bind
+   the lines into a single group, and every language carries equal weight —
+   emphasising one would imply a primary language, which this page must not do. */
+.say{
+  margin:.95rem 0 0;
+  padding-left:1.05rem;
+  border-left:1px solid var(--rule-strong);
+  font:400 1.01rem/1.5 ui-serif,Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  color:var(--muted);
 }
+.say p{margin:0}
+.say p+p{margin-top:.55rem}
 
 /* Parallax. Items travel sideways as you scroll — left-hand items drift
    rightward, right-hand items drift leftward, so the two columns slide past
@@ -302,30 +307,37 @@ footer p{margin:0}
         <article class="made-item">
           <h3><a href="https://invoiceit.angeloni.com/">InvoiceIt</a></h3>
           <span class="kind">Main project</span>
-          <p>Invoicing for people who need it cheap.</p>
+          <div class="say">
+            <p lang="fr">De la facturation pour ceux qui la veulent bon marché.</p>
+            <p lang="en">Invoicing for people who need it cheap.</p>
+            <p lang="es">Facturación para quienes la necesitan barata.</p>
+            <p lang="pt">Faturamento para quem precisa que seja barato.</p>
+            <p lang="de">Rechnungen für alle, die es günstig brauchen.</p>
+          </div>
           <span class="host">invoiceit.angeloni.com</span>
         </article>
 
         <article class="made-item">
           <h3><a href="https://hoididoi.com/">HoiDiDoi</a></h3>
           <span class="kind">Marketplace</span>
-          <ul class="langs">
-            <li lang="fr"><b>fr</b><span>Une marketplace pour les communautés — écoles, universités, entreprises.</span></li>
-            <li lang="en"><b>en</b><span>A marketplace for communities — schools, universities, companies.</span></li>
-            <li lang="es"><b>es</b><span>Un marketplace para comunidades — escuelas, universidades, empresas.</span></li>
-            <li lang="pt"><b>pt</b><span>Um marketplace para comunidades — escolas, universidades, empresas.</span></li>
-            <li lang="de"><b>de</b><span>Ein Marktplatz für Gemeinschaften — Schulen, Universitäten, Unternehmen.</span></li>
-          </ul>
+          <div class="say">
+            <p lang="fr">Une marketplace pour les communautés — écoles, universités, entreprises.</p>
+            <p lang="en">A marketplace for communities — schools, universities, companies.</p>
+            <p lang="es">Un marketplace para comunidades — escuelas, universidades, empresas.</p>
+            <p lang="pt">Um marketplace para comunidades — escolas, universidades, empresas.</p>
+            <p lang="de">Ein Marktplatz für Gemeinschaften — Schulen, Universitäten, Unternehmen.</p>
+          </div>
           <span class="host">hoididoi.com</span>
         </article>
 
         <article class="made-item">
           <h3><a href="https://savethe1percent.com/">Save The 1%</a></h3>
           <span class="kind">Book</span>
-          <p>
-            Why the rich should fund the revolution that saves them — the
-            arithmetic of universal basic income as revolution insurance.
-          </p>
+          <div class="say">
+            <p lang="en">Why the rich should fund the revolution that saves them — universal basic income as revolution insurance.</p>
+            <p lang="fr">Pourquoi les riches devraient financer la révolution qui les sauve — le revenu de base universel comme assurance anti-révolution.</p>
+            <p lang="es">Por qué los ricos deberían financiar la revolución que los salva — la renta básica universal como seguro antirrevolución.</p>
+          </div>
           <span class="host">savethe1percent.com</span>
         </article>
 
@@ -337,9 +349,11 @@ footer p{margin:0}
       <div class="made">
         <article class="made-item">
           <h3><a href="https://mamanclown.com/">Maman Clown</a></h3>
-          <span class="kind">Carole’s business</span>
-          <p>My wife Carole’s business: children’s entertainment.</p>
-          <p lang="fr">Spectacles et animations pour fêtes d’enfants.</p>
+          <span class="kind">My wife Carole’s business</span>
+          <div class="say">
+            <p lang="fr">Spectacles et animations pour fêtes d’enfants.</p>
+            <p lang="en">Shows and entertainment for children’s parties.</p>
+          </div>
           <span class="host">mamanclown.com</span>
         </article>
       </div>
