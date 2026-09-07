@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angeloni — Stephen Angeloni</title>
+<meta name="description" content="Personal site of Stephen Angeloni: InvoiceIt, HoiDiDoi, and the book Save The 1%. Not affiliated with Grupo Angeloni (supermarkets, Brazil) or Angeloni Group (composites, Italy) — links to both at the bottom of the page.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://angeloni.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Angeloni — Stephen Angeloni">
+<meta property="og:description" content="Personal site of Stephen Angeloni. Looking for the Angeloni supermarkets in Brazil, or Angeloni Group in Italy? Links at the bottom of the page.">
+<meta property="og:url" content="https://angeloni.com/">
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#faf8f5;
+  --surface:#fffefc;
+  --ink:#1b1a17;
+  --muted:#5e594f;
+  --faint:#8a847a;
+  --rule:#e3ded4;
+  --rule-strong:#cfc8bb;
+  --band:#f2eee6;
+  --focus:#1d5b8c;
+
+  --br-ink:#00305f;
+  --br-accent:#e8761a;
+  --it-ink:#7a171e;
+  --it-accent:#861a22;
+  --gd-ink:#171717;
+  --gd-accent:#bf0f19;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#131210;
+    --surface:#1b1917;
+    --ink:#ece7de;
+    --muted:#a8a196;
+    --faint:#8b847a;
+    --rule:#2e2a25;
+    --rule-strong:#433d35;
+    --band:#1f1c17;
+    --focus:#84b8e0;
+
+    --br-ink:#93bff2;
+    --br-accent:#fa9425;
+    --it-ink:#e4a0a5;
+    --it-accent:#cf5f68;
+    --gd-ink:#e9e5de;
+    --gd-accent:#f4787f;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-synthesis-weight:none;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word;
+  overflow-x:clip;
+}
+.wrap{max-width:58rem;margin:0 auto;padding:0 1.5rem}
+
+a{color:inherit}
+a:focus-visible,.card:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.skip{
+  position:absolute;left:-9999px;top:0;
+  background:var(--surface);color:var(--ink);
+  padding:.7rem 1rem;z-index:10;border:1px solid var(--rule-strong);
+}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* ── Signpost: the two-second exit for someone in the wrong place ── */
+.signpost{
+  display:block;
+  background:var(--band);
+  border-bottom:1px solid var(--rule);
+  text-decoration:none;
+  padding:.85rem 0;
+}
+.signpost .wrap{
+  display:flex;flex-wrap:wrap;align-items:baseline;
+  gap:.3rem .75rem;
+  font-size:.9rem;color:var(--muted);
+}
+.signpost span+span::before{
+  content:"·";margin-right:.75rem;color:var(--faint);
+}
+.signpost .go{margin-left:auto;color:var(--ink);font-weight:600;white-space:nowrap}
+.signpost .go::before{content:none}
+.signpost:hover .go,.signpost:focus-visible .go{text-decoration:underline}
+
+/* ── Masthead ── */
+header.mast{padding:4.5rem 0 0}
+h1{
+  font:400 clamp(3rem,13vw,5.25rem)/1 ui-serif,Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  letter-spacing:-.02em;
+  margin:0;
+}
+.mast .lede{
+  max-width:34rem;
+  margin:1.75rem 0 0;
+  color:var(--muted);
+  font-size:1.02rem;
+}
+.mast hr{
+  border:0;border-top:1px solid var(--rule-strong);
+  margin:3rem 0 0;
+}
+
+section{padding:3.25rem 0 0}
+h2{
+  font:600 .78rem/1.3 inherit;
+  letter-spacing:.13em;text-transform:uppercase;
+  color:var(--faint);
+  margin:0 0 2.25rem;
+}
+h3{font:600 1.28rem/1.3 inherit;margin:0}
+
+/* ── Things I've made: one presentation, stepped left / right ── */
+.made{display:grid;gap:3.25rem}
+.made-item{
+  max-width:32.5rem;
+  border-top:1px solid var(--rule);
+  padding-top:1.4rem;
+}
+.made-item:nth-child(even){margin-left:auto}
+
+.made-item .kind{
+  display:block;margin-top:.4rem;
+  font-size:.72rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--faint);
+}
+.made-item p{margin:.75rem 0 0;color:var(--muted)}
+.made-item .host{
+  display:inline-block;margin-top:.9rem;
+  font-size:.88rem;color:var(--faint);
+}
+.made-item h3 a{
+  text-decoration-color:var(--rule-strong);
+  text-underline-offset:3px;
+}
+.made-item h3 a:hover{text-decoration-color:currentColor}
+
+/* HoiDiDoi's five-language line */
+.langs{list-style:none;margin:.8rem 0 0;padding:0;font-size:.89rem}
+.langs li{display:flex;gap:.7rem;color:var(--muted);padding:.1rem 0}
+.langs b{
+  flex:none;width:1.75rem;
+  font:700 .66rem/1.75 inherit;letter-spacing:.08em;
+  color:var(--faint);text-transform:uppercase;
+}
+
+/* Parallax. Items travel sideways as you scroll — left-hand items drift
+   rightward, right-hand items drift leftward, so the two columns slide past
+   each other. The vertical rate differs between them as well, which is what
+   gives the depth. --dx shrinks, then goes to zero, as space runs out.
+   Progressive enhancement only: no support, or reduced-motion, means a static page. */
+@keyframes glide-a{
+  from{translate:calc(var(--dx) * -1) var(--dy)}
+  to  {translate:calc(var(--dx) * .8) calc(var(--dy) * -1)}
+}
+@keyframes glide-b{
+  from{translate:var(--dx) var(--dy)}
+  to  {translate:calc(var(--dx) * -.8) calc(var(--dy) * -1)}
+}
+@keyframes settle{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .made-item{
+      --dx:78px; --dy:30px;
+      animation:glide-a linear both, settle linear both;
+      animation-timeline:view(), view();
+      animation-range:cover 0% cover 100%, entry 0% entry 60%;
+    }
+    .made-item:nth-child(even){--dy:54px;animation-name:glide-b, settle}
+    @media (max-width:64rem){.made-item{--dx:30px}}
+    @media (max-width:48rem){.made-item{--dx:0px;--dy:26px}}
+  }
+}
+
+/* ── The break, then the wayfinding band (deliberately static) ── */
+.band{
+  margin-top:5rem;
+  background:var(--band);
+  border-top:1px solid var(--rule-strong);
+  padding:3.25rem 0 3.5rem;
+}
+.band h2{
+  color:var(--ink);
+  font:400 clamp(1.35rem,4.6vw,1.85rem)/1.35 ui-serif,Georgia,"Iowan Old Style",Palatino,"Times New Roman",serif;
+  letter-spacing:0;text-transform:none;
+  margin:0 0 2rem;
+}
+.band h2 span{display:block}
+.band h2 span+span{color:var(--muted);font-size:.82em}
+.band .note{
+  margin:2rem 0 0;
+  padding-top:1.4rem;
+  border-top:1px solid var(--rule-strong);
+  color:var(--muted);font-size:.88rem;max-width:38rem;
+}
+.band .note span{display:block}
+.band .note span+span{margin-top:.45rem}
+
+.cards{display:grid;gap:1rem;max-width:46rem}
+.card{
+  display:block;text-decoration:none;
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-left:4px solid var(--accent);
+  border-radius:3px;
+  padding:1.4rem 1.5rem;
+  transition:border-color .12s ease, transform .12s ease;
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+.card:hover{border-color:var(--rule-strong);border-left-color:var(--accent);transform:translateY(-1px)}
+.card .name{display:block;font:600 1.2rem/1.3 inherit;color:var(--name)}
+.card .where{
+  display:block;margin-top:.15rem;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:600;
+}
+.card .what{display:block;margin-top:.7rem;color:var(--muted);font-size:.96rem}
+.card .url{display:block;margin-top:.85rem;font-size:.9rem;font-weight:600;color:var(--accent)}
+.card .url span{color:var(--muted);font-weight:400}
+.card:hover .url{text-decoration:underline}
+
+.card.br{--accent:var(--br-accent);--name:var(--br-ink)}
+.card.ag{--accent:var(--it-accent);--name:var(--it-ink)}
+.card.gd{--accent:var(--gd-accent);--name:var(--gd-ink)}
+.card.gd .name{
+  font-family:ui-serif,Georgia,"Iowan Old Style",Palatino,"Times New Roman",serif;
+  font-weight:400;letter-spacing:.04em;
+}
+
+footer{
+  border-top:1px solid var(--rule);
+  padding:2.25rem 0 3.5rem;
+  color:var(--faint);font-size:.87rem;
+}
+footer p{margin:0}
+
+@media (max-width:48rem){
+  .made{gap:2.5rem}
+  .made-item,.made-item:nth-child(even){max-width:none;margin-left:0}
+}
+@media (max-width:34rem){
+  body{font-size:16px}
+  header.mast{padding-top:3rem}
+  .signpost span+span::before{content:none}
+  .signpost .wrap{gap:.35rem 0}
+  .signpost .go{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Trilingual escape hatch, above everything else. Portuguese first: it is
+     the language of the overwhelming majority of misdirected arrivals. -->
+<a class="signpost" href="#other-angelonis">
+  <span class="wrap">
+    <span lang="pt-BR">Procurando outro Angeloni?</span>
+    <span lang="it">Cerchi un altro Angeloni?</span>
+    <span lang="en">Looking for a different Angeloni?</span>
+    <span class="go" aria-hidden="true">↓</span>
+  </span>
+</a>
+
+<header class="mast">
+  <div class="wrap">
+    <h1>Angeloni</h1>
+    <p class="lede">
+      The personal site of Stephen Angeloni — an index of the things I build and write.
+      Several unrelated companies around the world share this name; if you were
+      looking for one of those, they are listed at the bottom of the page.
+    </p>
+    <hr>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <section aria-labelledby="made">
+      <h2 id="made">Things I’ve made</h2>
+
+      <div class="made">
+
+        <article class="made-item">
+          <h3><a href="https://invoiceit.angeloni.com/">InvoiceIt</a></h3>
+          <span class="kind">Main project</span>
+          <p>Invoicing for people who need it cheap.</p>
+          <span class="host">invoiceit.angeloni.com</span>
+        </article>
+
+        <article class="made-item">
+          <h3><a href="https://hoididoi.com/">HoiDiDoi</a></h3>
+          <span class="kind">Marketplace</span>
+          <ul class="langs">
+            <li lang="fr"><b>fr</b><span>Une marketplace pour les communautés — écoles, universités, entreprises.</span></li>
+            <li lang="en"><b>en</b><span>A marketplace for communities — schools, universities, companies.</span></li>
+            <li lang="es"><b>es</b><span>Un marketplace para comunidades — escuelas, universidades, empresas.</span></li>
+            <li lang="pt"><b>pt</b><span>Um marketplace para comunidades — escolas, universidades, empresas.</span></li>
+            <li lang="de"><b>de</b><span>Ein Marktplatz für Gemeinschaften — Schulen, Universitäten, Unternehmen.</span></li>
+          </ul>
+          <span class="host">hoididoi.com</span>
+        </article>
+
+        <article class="made-item">
+          <h3><a href="https://savethe1percent.com/">Save The 1%</a></h3>
+          <span class="kind">Book</span>
+          <p>
+            Why the rich should fund the revolution that saves them — the
+            arithmetic of universal basic income as revolution insurance.
+          </p>
+          <span class="host">savethe1percent.com</span>
+        </article>
+
+      </div>
+    </section>
+
+    <section aria-labelledby="family">
+      <h2 id="family">Also in the family</h2>
+      <div class="made">
+        <article class="made-item">
+          <h3><a href="https://mamanclown.com/">Maman Clown</a></h3>
+          <span class="kind">Carole’s business</span>
+          <p>My wife Carole’s business: children’s entertainment.</p>
+          <p lang="fr">Spectacles et animations pour fêtes d’enfants.</p>
+          <span class="host">mamanclown.com</span>
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ─────────── The break ─────────── -->
+  <section class="band" id="other-angelonis" aria-labelledby="other-heading">
+    <div class="wrap">
+      <h2 id="other-heading">
+        <span lang="pt-BR">Você procura outra empresa Angeloni?</span>
+        <span lang="it">Cerchi un’altra azienda Angeloni?</span>
+        <span lang="en">Looking for a different Angeloni?</span>
+      </h2>
+
+      <div class="cards">
+
+        <a class="card br" href="https://www.angeloni.com.br/" hreflang="pt-BR">
+          <span class="name">Grupo Angeloni</span>
+          <span class="where">Brasil — Santa Catarina e Paraná</span>
+          <span class="what" lang="pt-BR">
+            Supermercados, farmácias, postos de combustível e lojas de eletro.
+            Fundado em 1958 pelos irmãos Antenor e Arnaldo Angeloni.
+          </span>
+          <span class="url">angeloni.com.br <span>· super.angeloni.com.br</span></span>
+        </a>
+
+        <a class="card ag" href="https://www.angelonigroup.com/" hreflang="it">
+          <span class="name">Angeloni Group</span>
+          <span class="where">Italia — Quarto d’Altino, Venezia</span>
+          <span class="what" lang="it">
+            Materiali compositi avanzati e fibra di carbonio, dal 1927.
+            Tessuti, multiassiali e preimpregnati con filati high tech.
+          </span>
+          <span class="url">angelonigroup.com</span>
+        </a>
+
+        <a class="card gd" href="https://guidoangeloni.com/" hreflang="it">
+          <span class="name">Guido Angeloni</span>
+          <span class="where">Italia — Curno, Bergamo</span>
+          <span class="what" lang="it">
+            Cinture e pelletteria di lusso. Un marchio di I.S.G. Italian Stylistic Group.
+          </span>
+          <span class="url">guidoangeloni.com</span>
+        </a>
+
+      </div>
+
+      <p class="note">
+        <span lang="pt-BR">Este site é pessoal e não tem qualquer ligação com as empresas listadas acima. Elas apenas compartilham o mesmo nome.</span>
+        <span lang="it">Questo è un sito personale, senza alcun legame con le aziende elencate qui sopra. Condividono soltanto il nome.</span>
+        <span lang="en">This is a personal site with no connection to the companies listed above. They simply share the name.</span>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© Stephen Angeloni. Built as a plain HTML page, hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+</body>
+</html>
